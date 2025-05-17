@@ -14,7 +14,7 @@
   ],
   "headers": [
     {
-      "source": "/js/*.js",
+      "source": "/js/game.js",
       "headers": [{ "key": "Content-Type", "value": "application/javascript" }]
     }
   ]
