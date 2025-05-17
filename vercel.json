@@ -11,5 +11,8 @@
       "src": "/(.*)",
       "dest": "index.html"
     }
+  ],
+  "headers": [
+    { "source": "/js/*.js", "headers": [{ "key": "Content-Type", "value": "application/javascript" }] }
   ]
 }
