@@ -14,7 +14,11 @@
   ],
   "headers": [
     {
-      "source": "/js/game.js",
+      "source": "/styles.css",
+      "headers": [{ "key": "Content-Type", "value": "text/css" }]
+    },
+    {
+      "source": "/src/game.js",
       "headers": [{ "key": "Content-Type", "value": "application/javascript" }]
     }
   ]
