@@ -6,13 +6,16 @@
       "use": "@vercel/static"
     }
   ],
-  "routes": [
+  "rewrites": [
     {
-      "src": "/(.*)",
-      "dest": "index.html"
+      "source": "/(.*)",
+      "destination": "/index.html"
     }
   ],
   "headers": [
-    { "source": "/js/*.js", "headers": [{ "key": "Content-Type", "value": "application/javascript" }] }
+    {
+      "source": "/js/*.js",
+      "headers": [{ "key": "Content-Type", "value": "application/javascript" }]
+    }
   ]
 }
