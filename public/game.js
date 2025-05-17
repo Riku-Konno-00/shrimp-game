@@ -45,10 +45,10 @@ class Game {
             octopus: new Image()
         };
 
-        this.images.shrimp.src = 'images/shrimp1.png';
-        this.images.goldenShrimp.src = 'images/shrimp2.png';
-        this.images.bomb.src = 'images/shrimp3.png';
-        this.images.octopus.src = 'images/oct1.png';
+        this.images.shrimp.src = '../images/shrimp1.png';
+        this.images.goldenShrimp.src = '../images/shrimp2.png';
+        this.images.bomb.src = '../images/shrimp3.png';
+        this.images.octopus.src = '../images/oct1.png';
 
         // 画像の読み込み完了を待つ
         Promise.all([
