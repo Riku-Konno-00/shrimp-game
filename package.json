@@ -1,0 +1,22 @@
+{
+  "name": "shrimp-game",
+  "version": "1.0.0",
+  "description": "A fun shrimp catching game.",
+  "main": "src/game.js",
+  "scripts": {
+    "start": "live-server public",
+    "build": "echo 'No build step required'",
+    "deploy": "vercel --prod"
+  },
+  "keywords": [
+    "game",
+    "shrimp",
+    "catching"
+  ],
+  "author": "Your Name",
+  "license": "MIT",
+  "dependencies": {},
+  "devDependencies": {
+    "live-server": "^1.2.1"
+  }
+}

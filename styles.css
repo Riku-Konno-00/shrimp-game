@@ -1,0 +1,215 @@
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #87CEEB;
+    font-family: 'Arial', sans-serif;
+}
+
+.game-container {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    width: 100%;
+    max-width: 800px;
+    margin: 20px;
+}
+
+.stats {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    z-index: 1;
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 10px;
+    border-radius: 5px;
+    font-size: clamp(14px, 3vw, 20px);
+}
+
+.stats > div {
+    margin: 5px 0;
+}
+
+#gameCanvas {
+    border: 2px solid #333;
+    background-color: rgba(255, 255, 255, 0.9);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    width: 100%;
+    height: auto;
+    max-width: 800px;
+    aspect-ratio: 4/3;
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 10;
+}
+
+.game-button {
+    padding: clamp(10px, 2vw, 15px) clamp(20px, 4vw, 30px);
+    font-size: clamp(16px, 3vw, 24px);
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.game-button:hover {
+    background-color: #45a049;
+}
+
+.quit-button {
+    padding: clamp(8px, 1.5vw, 10px) clamp(15px, 3vw, 20px);
+    font-size: clamp(14px, 2.5vw, 18px);
+    background-color: #ff4444;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.quit-button:hover {
+    background-color: #cc0000;
+}
+
+.modal-content {
+    background-color: white;
+    padding: clamp(20px, 4vw, 30px);
+    border-radius: 10px;
+    text-align: center;
+    width: 90%;
+    max-width: 400px;
+    margin: 20px;
+}
+
+.modal-content.completion {
+    border: 3px solid #4CAF50;
+    box-shadow: 0 0 15px rgba(76, 175, 80, 0.3);
+}
+
+.modal-content h2 {
+    margin-top: 0;
+    color: #333;
+    font-size: clamp(20px, 4vw, 28px);
+}
+
+.modal-content.completion h2 {
+    color: #4CAF50;
+}
+
+.modal-content p {
+    font-size: clamp(16px, 3vw, 20px);
+}
+
+.countdown-number {
+    font-size: clamp(60px, 10vw, 120px);
+    color: white;
+    font-weight: bold;
+    animation: pulse 1s infinite;
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.2); }
+    100% { transform: scale(1); }
+}
+
+.level-up-notification {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    pointer-events: none;
+}
+
+.level-up-content {
+    background: rgba(0, 0, 0, 0.8);
+    padding: clamp(15px, 3vw, 20px) clamp(30px, 5vw, 40px);
+    border-radius: 15px;
+    border: 3px solid #FFD700;
+    animation: popIn 0.5s ease-out;
+}
+
+.level-up-title {
+    color: #FFD700;
+    font-size: clamp(24px, 5vw, 36px);
+    font-weight: bold;
+    text-align: center;
+    text-shadow: 0 0 10px #FFD700;
+    margin-bottom: 10px;
+}
+
+.level-up-number {
+    color: #FFFFFF;
+    font-size: clamp(32px, 6vw, 48px);
+    font-weight: bold;
+    text-align: center;
+}
+
+.screen-flash {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.3);
+    pointer-events: none;
+    animation: flash 0.5s ease-out;
+    z-index: 999;
+}
+
+@keyframes popIn {
+    0% {
+        transform: scale(0.5);
+        opacity: 0;
+    }
+    50% {
+        transform: scale(1.2);
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+@keyframes flash {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+@media (max-width: 480px) {
+    .game-container {
+        margin: 10px;
+    }
+
+    .stats {
+        top: 10px;
+        left: 10px;
+        padding: 8px;
+    }
+} 

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>エビキャッチャー</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="game-container">
+        <div class="stats">
+            <div class="score">スコア: <span id="score">0</span></div>
+            <div class="hp">HP: <span id="hp">3</span></div>
+            <div class="level">レベル: <span id="level">1</span></div>
+        </div>
+        <canvas id="gameCanvas"></canvas>
+        
+        <!-- スタート画面 -->
+        <div id="startScreen" class="overlay">
+            <button id="startButton" class="game-button">スタート</button>
+        </div>
+
+        <!-- カウントダウン -->
+        <div id="countdown" class="overlay" style="display: none;">
+            <div class="countdown-number"></div>
+        </div>
+
+        <!-- ゲームオーバーモーダル -->
+        <div id="gameOverModal" class="overlay" style="display: none;">
+            <div class="modal-content">
+                <h2>ゲームオーバー！</h2>
+                <p>スコア: <span id="finalScore">0</span></p>
+                <p>レベル: <span id="finalLevel">1</span></p>
+                <button id="restartButton" class="game-button">もう一度プレイ</button>
+            </div>
+        </div>
+    </div>
+    <script src="game.js"></script>
+</body>
+</html> 
